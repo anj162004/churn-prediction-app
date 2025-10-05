@@ -2,6 +2,17 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import zipfile
+import os
+import pickle
+
+# Unzip the model file if not already extracted
+if not os.path.exists("customer_churn.pkl"):
+    with zipfile.ZipFile("customer_churn.zip", "r") as zip_ref:
+        zip_ref.extractall()
+
+# Now load the model
+
 
 def totalcharges_preprocess(X):
     X = X.copy()
