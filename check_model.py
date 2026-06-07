@@ -1,5 +1,7 @@
-import pandas as pd
+# check_model.py
+
 import pickle
+import pandas as pd
 
 def totalcharges_preprocess(X):
     X = X.copy()
@@ -12,5 +14,6 @@ def totalcharges_preprocess(X):
 with open("churn_model.pkl", "rb") as f:
     model = pickle.load(f)
 
-print(type(model))
 print(model)
+print("\n")
+print(model.named_steps)

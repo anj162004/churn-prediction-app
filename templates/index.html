@@ -120,17 +120,42 @@
                         <option>Two year</option>
                     </select>
                 </div>
+                <div class="col-md-6 mt-3">
+                    <label class="form-label">Online Security</label>
+                    <select name="OnlineSecurity" class="form-select">
+                        <option>Yes</option>
+                        <option>No</option>
+                        <option>No internet service</option>
+                    </select>
+                </div>
 
+                <div class="col-md-6 mt-3">
+                    <label class="form-label">Tech Support</label>
+                     <select name="TechSupport" class="form-select">
+                        <option>Yes</option>
+                        <option>No</option>
+                        <option>No internet service</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 mt-3">
+                    <label class="form-label">Payment Method</label>
+                    <select name="PaymentMethod" class="form-select">
+                        <option>Electronic check</option>
+                        <option>Mailed check</option>
+                        <option>Bank transfer (automatic)</option>
+                        <option>Credit card (automatic)</option>
+                    </select>
+                </div>
                 <input type="hidden" name="MultipleLines" value="No">
-                <input type="hidden" name="OnlineSecurity" value="No">
+                
                 <input type="hidden" name="OnlineBackup" value="No">
                 <input type="hidden" name="DeviceProtection" value="No">
-                <input type="hidden" name="TechSupport" value="No">
+                
                 <input type="hidden" name="StreamingTV" value="No">
                 <input type="hidden" name="StreamingMovies" value="No">
                 <input type="hidden" name="PaperlessBilling" value="Yes">
-                <input type="hidden" name="PaymentMethod" value="Electronic check">
-
+                
             </div>
 
             <div class="text-center mt-4">
@@ -179,9 +204,21 @@
             </li>
             {% endfor %}
         </ul>
+        <hr>
+
+        <h4>Top Factors Influencing Prediction</h4>
+
+        <ul class="list-group">
+            {% for factor in top_factors %}
+            <li class="list-group-item">
+                {{ factor }}
+            </li>
+            {% endfor %}
+        </ul>
 
     </div>
 </div>
+
 
 {% endif %}
 ```
